@@ -5,25 +5,67 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { FlashCard } from './components/FlashCard';
 import { Quiz } from './components/Quiz';
 
-// Extended lesson data with categories
-const LESSONS: LessonConfig[] = [
-  // --- Stage 1: Alphabet (A-F for demo) ---
-  { id: 'a', topic: 'Letter A', category: 'alphabet', color: 'bg-red-100', icon: '🅰️', level: 1 },
-  { id: 'b', topic: 'Letter B', category: 'alphabet', color: 'bg-blue-100', icon: '🅱️', level: 1 },
-  { id: 'c', topic: 'Letter C', category: 'alphabet', color: 'bg-yellow-100', icon: '🆎', level: 1 },
-  { id: 'd', topic: 'Letter D', category: 'alphabet', color: 'bg-green-100', icon: '🇩', level: 1 },
-  { id: 'e', topic: 'Letter E', category: 'alphabet', color: 'bg-purple-100', icon: '🐘', level: 1 },
-  
-  // --- Stage 2: Phonetics ---
+// --- DATA GENERATION HELPERS ---
+
+// Palette for rotating colors
+const BG_COLORS = [
+  'bg-red-100', 'bg-orange-100', 'bg-amber-100', 'bg-yellow-100', 'bg-lime-100',
+  'bg-green-100', 'bg-emerald-100', 'bg-teal-100', 'bg-cyan-100', 'bg-sky-100',
+  'bg-blue-100', 'bg-indigo-100', 'bg-violet-100', 'bg-purple-100', 'bg-fuchsia-100',
+  'bg-pink-100', 'bg-rose-100'
+];
+
+// Generate Alphabet Lessons (A-Z)
+const ALPHABET_LESSONS: LessonConfig[] = Array.from({ length: 26 }, (_, i) => {
+  const char = String.fromCharCode(65 + i); // 65 is 'A'
+  return {
+    id: `letter-${char.toLowerCase()}`,
+    topic: `Letter ${char}`,
+    category: 'alphabet',
+    color: BG_COLORS[i % BG_COLORS.length],
+    icon: char, // Display the letter itself as the icon
+    level: 1
+  };
+});
+
+// Generate Phonetics Lessons (Basic Vowels + Consonants)
+const PHONETICS_LESSONS: LessonConfig[] = [
   { id: 'p1', topic: 'Short A /æ/', category: 'phonetics', color: 'bg-orange-100', icon: '😺', level: 2 },
   { id: 'p2', topic: 'Short E /e/', category: 'phonetics', color: 'bg-teal-100', icon: '🛏️', level: 2 },
-  { id: 'p3', topic: 'Sound /s/', category: 'phonetics', color: 'bg-indigo-100', icon: '🐍', level: 2 },
-  
-  // --- Stage 3: Topics ---
+  { id: 'p3', topic: 'Short I /ɪ/', category: 'phonetics', color: 'bg-purple-100', icon: '🐷', level: 2 },
+  { id: 'p4', topic: 'Short O /ɒ/', category: 'phonetics', color: 'bg-red-100', icon: '🦊', level: 2 },
+  { id: 'p5', topic: 'Short U /ʌ/', category: 'phonetics', color: 'bg-yellow-100', icon: '🚌', level: 2 },
+  { id: 'p6', topic: 'Sound /s/', category: 'phonetics', color: 'bg-indigo-100', icon: '🐍', level: 2 },
+  { id: 'p7', topic: 'Sound /sh/', category: 'phonetics', color: 'bg-blue-100', icon: '🤫', level: 2 },
+  { id: 'p8', topic: 'Sound /ch/', category: 'phonetics', color: 'bg-green-100', icon: '🚂', level: 2 },
+  { id: 'p9', topic: 'Sound /th/', category: 'phonetics', color: 'bg-cyan-100', icon: '🦷', level: 2 },
+];
+
+// Generate Topic Lessons (Rich variety)
+const TOPIC_LESSONS: LessonConfig[] = [
   { id: '1', topic: 'Farm Animals', category: 'topic', color: 'bg-green-100', icon: '🐮', level: 3 },
   { id: '2', topic: 'Fruits', category: 'topic', color: 'bg-red-100', icon: '🍎', level: 3 },
   { id: '3', topic: 'Family', category: 'topic', color: 'bg-blue-100', icon: '👨‍👩‍👧', level: 3 },
   { id: '4', topic: 'Colors', category: 'topic', color: 'bg-yellow-100', icon: '🌈', level: 3 },
+  { id: '5', topic: 'Vehicles', category: 'topic', color: 'bg-orange-100', icon: '🚗', level: 3 },
+  { id: '6', topic: 'Body Parts', category: 'topic', color: 'bg-pink-100', icon: '👀', level: 3 },
+  { id: '7', topic: 'Clothing', category: 'topic', color: 'bg-purple-100', icon: '👕', level: 3 },
+  { id: '8', topic: 'School', category: 'topic', color: 'bg-teal-100', icon: '🏫', level: 3 },
+  { id: '9', topic: 'Nature', category: 'topic', color: 'bg-emerald-100', icon: '🌳', level: 3 },
+  { id: '10', topic: 'Yummy Food', category: 'topic', color: 'bg-amber-100', icon: '🍕', level: 3 },
+  { id: '11', topic: 'Space', category: 'topic', color: 'bg-indigo-100', icon: '🚀', level: 3 },
+  { id: '12', topic: 'Ocean Life', category: 'topic', color: 'bg-cyan-100', icon: '🐙', level: 3 },
+  { id: '13', topic: 'Numbers 1-10', category: 'topic', color: 'bg-lime-100', icon: '🔢', level: 3 },
+  { id: '14', topic: 'Shapes', category: 'topic', color: 'bg-violet-100', icon: '🔺', level: 3 },
+  { id: '15', topic: 'Weather', category: 'topic', color: 'bg-sky-100', icon: '☀️', level: 3 },
+  { id: '16', topic: 'Toys', category: 'topic', color: 'bg-rose-100', icon: '🧸', level: 3 },
+];
+
+// Combine all lessons
+const LESSONS: LessonConfig[] = [
+  ...ALPHABET_LESSONS,
+  ...PHONETICS_LESSONS,
+  ...TOPIC_LESSONS
 ];
 
 function App() {
@@ -218,7 +260,7 @@ function App() {
             <div 
                 key={lesson.id} 
                 className={`relative z-10 flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'} animate-pop`}
-                style={{ animationDelay: `${index * 100}ms` }}
+                style={{ animationDelay: `${index * 50}ms` }}
             >
                 <button
                     onClick={() => startLesson(lesson)}
@@ -228,7 +270,7 @@ function App() {
                         ${lesson.color}
                     `}
                 >
-                    <span className="text-4xl mb-1">{lesson.icon}</span>
+                    <span className="text-4xl mb-1 font-black text-brand-blue">{lesson.icon}</span>
                     <span className="text-xs font-bold text-gray-600 px-2 truncate w-full text-center">{lesson.topic}</span>
                     
                     {/* Progress / Stars placeholder */}
