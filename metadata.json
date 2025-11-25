@@ -1,0 +1,7 @@
+{
+  "name": "LingoQuest Kids",
+  "description": "A magical, AI-powered English learning adventure for children. Zero-prep, infinite fun with generated cartoons and voice.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
