@@ -55,6 +55,19 @@ npm run build      # 输出到 dist/
 npm run preview    # 本地预览构建产物
 ```
 
+## ☁️ 云端部署（GitHub Pages）
+
+本仓库已添加 GitHub Pages 自动部署工作流。
+
+1. 进入仓库 **Settings → Pages**
+2. 将 **Build and deployment** 的 **Source** 设置为 **GitHub Actions**
+3. 推送到 `main` 分支，或手动触发 **Deploy to GitHub Pages** 工作流
+4. 部署完成后，可通过：
+
+   `https://HXW7180159156.github.io/ChildStudyApp/`
+
+> 当前仓库默认可直接以“示例数据预览模式”部署运行；如果把 `GEMINI_API_KEY` 注入前端构建产物，会暴露给访问者，因此不建议在纯静态托管中直接使用该密钥。
+
 ## 🗂️ 项目结构
 
 ```
