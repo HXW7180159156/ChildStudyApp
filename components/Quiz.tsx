@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { WordItem, QuizResult } from '../types';
-import { playAudioBuffer } from '../services/audioUtils';
+import { speakWord } from '../services/speech';
 
 interface QuizProps {
   words: WordItem[];
@@ -73,9 +73,7 @@ export const Quiz: React.FC<QuizProps> = ({ words, audioContext, onComplete, rev
         correctFirstTryRef.current += 1;
       }
       setShowFeedback('correct');
-      if (audioContext && currentWord.audioBuffer) {
-        playAudioBuffer(currentWord.audioBuffer, audioContext);
-      }
+      speakWord(currentWord, audioContext);
       setTimeout(() => {
         if (currentIndex < rounds.length - 1) {
           currentMissedRef.current = false;
