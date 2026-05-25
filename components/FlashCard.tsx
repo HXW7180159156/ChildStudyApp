@@ -1,6 +1,6 @@
 import React from 'react';
 import { WordItem } from '../types';
-import { playAudioBuffer } from '../services/audioUtils';
+import { speakWord } from '../services/speech';
 
 interface FlashCardProps {
   item: WordItem;
@@ -12,9 +12,7 @@ interface FlashCardProps {
 export const FlashCard: React.FC<FlashCardProps> = ({ item, audioContext, onNext, isLast }) => {
   
   const playSound = () => {
-    if (audioContext && item.audioBuffer) {
-      playAudioBuffer(item.audioBuffer, audioContext);
-    }
+    speakWord(item, audioContext);
   };
 
   // Play sound on mount once
