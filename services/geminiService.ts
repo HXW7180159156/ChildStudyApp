@@ -1,6 +1,7 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { WordItem, LessonCategory } from "../types";
-import { getFallbackVocabulary, PLACEHOLDER_IMAGE } from "./fallbackData";
+import { getFallbackVocabulary } from "./fallbackData";
+import { getWordImage } from "./wordImages";
 
 const API_KEY = process.env.API_KEY || '';
 export const hasApiKey = Boolean(API_KEY);
@@ -81,7 +82,7 @@ export const generateVocabulary = async (
  * placeholder when image generation is unavailable.
  */
 export const generateImage = async (word: string): Promise<string> => {
-  if (!ai) return PLACEHOLDER_IMAGE;
+  if (!ai) return getWordImage(word);
 
   try {
     const response = await ai.models.generateContent({
@@ -104,7 +105,7 @@ export const generateImage = async (word: string): Promise<string> => {
   } catch (error) {
     console.error("Image gen failed", error);
   }
-  return PLACEHOLDER_IMAGE;
+  return getWordImage(word);
 };
 
 /**
