@@ -12,11 +12,8 @@ interface FlashCardProps {
 export const FlashCard: React.FC<FlashCardProps> = ({ item, audioContext, onNext, isLast }) => {
   
   const playSound = () => {
-    if (audioContext && item.audioData) {
-      // We stored the AudioBuffer in item.audioData (typed as any in interface but handling here)
-      // In a real app, strict typing for AudioBuffer is better.
-      // Re-typing item.audioData for this scope:
-      playAudioBuffer(item.audioData as unknown as AudioBuffer, audioContext);
+    if (audioContext && item.audioBuffer) {
+      playAudioBuffer(item.audioBuffer, audioContext);
     }
   };
 
