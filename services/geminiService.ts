@@ -31,13 +31,14 @@ export const generateVocabulary = async (
       Include the word, a simple pronunciation guide, a Chinese translation, and a very simple definition.`;
       break;
     case 'phonetics':
-      prompt = `Generate 3 simple English words for a child that clearly demonstrate the phonetic sound "${topic}".
-      Ensure the sound is prominent in the word.
+      prompt = `Generate 10 distinct, simple English words for a child that clearly demonstrate the phonetic sound "${topic}".
+      Ensure the sound is prominent in each word, and that the words are concrete and easy to visualize.
       Include the word, the IPA pronunciation (highlighting the target sound), a Chinese translation, and a simple definition.`;
       break;
     case 'topic':
     default:
-      prompt = `Generate 3 simple English words for children related to the topic: "${topic}".
+      prompt = `Generate 10 distinct, simple English words for children related to the topic: "${topic}".
+      Ensure the words are common, concrete and easy to visualize for a 5-year-old.
       Include the word, a simple pronunciation guide, a Chinese translation, and a very simple definition suitable for a 5-year-old.`;
       break;
   }
