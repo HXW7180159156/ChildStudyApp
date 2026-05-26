@@ -17,6 +17,126 @@ const ALPHABET: Record<string, BaseWord[]> = {
     { word: 'Ball', pronunciation: '/bɔːl/', translation: '球', definition: 'A round toy you can throw.' },
     { word: 'Banana', pronunciation: '/bəˈnæn.ə/', translation: '香蕉', definition: 'A long yellow fruit.' },
   ],
+  C: [
+    { word: 'Cat', pronunciation: '/kæt/', translation: '猫', definition: 'A small furry pet.' },
+    { word: 'Cow', pronunciation: '/kaʊ/', translation: '奶牛', definition: 'A big animal that gives milk.' },
+    { word: 'Car', pronunciation: '/kɑːr/', translation: '汽车', definition: 'A vehicle with four wheels.' },
+  ],
+  D: [
+    { word: 'Dog', pronunciation: '/dɔːɡ/', translation: '狗', definition: 'A friendly pet that says woof.' },
+    { word: 'Duck', pronunciation: '/dʌk/', translation: '鸭子', definition: 'A bird that swims and says quack.' },
+    { word: 'Drum', pronunciation: '/drʌm/', translation: '鼓', definition: 'A musical instrument you hit.' },
+  ],
+  E: [
+    { word: 'Egg', pronunciation: '/eɡ/', translation: '鸡蛋', definition: 'A food that comes from a chicken.' },
+    { word: 'Elephant', pronunciation: '/ˈel.ɪ.fənt/', translation: '大象', definition: 'A huge gray animal with a long trunk.' },
+    { word: 'Ear', pronunciation: '/ɪr/', translation: '耳朵', definition: 'You use it to hear.' },
+  ],
+  F: [
+    { word: 'Fish', pronunciation: '/fɪʃ/', translation: '鱼', definition: 'An animal that swims in water.' },
+    { word: 'Frog', pronunciation: '/frɒɡ/', translation: '青蛙', definition: 'A green animal that hops.' },
+    { word: 'Flower', pronunciation: '/ˈflaʊ.ər/', translation: '花', definition: 'A pretty colorful plant.' },
+  ],
+  G: [
+    { word: 'Grape', pronunciation: '/ɡreɪp/', translation: '葡萄', definition: 'A small round juicy fruit.' },
+    { word: 'Goat', pronunciation: '/ɡoʊt/', translation: '山羊', definition: 'A farm animal with horns.' },
+    { word: 'Giraffe', pronunciation: '/dʒəˈræf/', translation: '长颈鹿', definition: 'A tall animal with a long neck.' },
+  ],
+  H: [
+    { word: 'Hat', pronunciation: '/hæt/', translation: '帽子', definition: 'Something you wear on your head.' },
+    { word: 'Horse', pronunciation: '/hɔːrs/', translation: '马', definition: 'A big animal you can ride.' },
+    { word: 'House', pronunciation: '/haʊs/', translation: '房子', definition: 'A place where people live.' },
+  ],
+  I: [
+    { word: 'Ice', pronunciation: '/aɪs/', translation: '冰', definition: 'Frozen water that is cold and hard.' },
+    { word: 'Igloo', pronunciation: '/ˈɪɡ.luː/', translation: '冰屋', definition: 'A round house made of snow.' },
+    { word: 'Insect', pronunciation: '/ˈɪn.sekt/', translation: '昆虫', definition: 'A small animal with six legs.' },
+  ],
+  J: [
+    { word: 'Jam', pronunciation: '/dʒæm/', translation: '果酱', definition: 'Sweet fruit spread for bread.' },
+    { word: 'Jet', pronunciation: '/dʒet/', translation: '喷气机', definition: 'A very fast plane.' },
+    { word: 'Juice', pronunciation: '/dʒuːs/', translation: '果汁', definition: 'A sweet drink made from fruit.' },
+  ],
+  K: [
+    { word: 'King', pronunciation: '/kɪŋ/', translation: '国王', definition: 'A man who rules a country.' },
+    { word: 'Kite', pronunciation: '/kaɪt/', translation: '风筝', definition: 'A toy that flies on the wind.' },
+    { word: 'Key', pronunciation: '/kiː/', translation: '钥匙', definition: 'A small metal tool that opens a lock.' },
+  ],
+  L: [
+    { word: 'Lion', pronunciation: '/ˈlaɪ.ən/', translation: '狮子', definition: 'A big wild cat that roars.' },
+    { word: 'Leaf', pronunciation: '/liːf/', translation: '叶子', definition: 'A flat green part of a tree.' },
+    { word: 'Lemon', pronunciation: '/ˈlem.ən/', translation: '柠檬', definition: 'A sour yellow fruit.' },
+  ],
+  M: [
+    { word: 'Moon', pronunciation: '/muːn/', translation: '月亮', definition: 'You can see it at night.' },
+    { word: 'Milk', pronunciation: '/mɪlk/', translation: '牛奶', definition: 'A white drink from cows.' },
+    { word: 'Mouse', pronunciation: '/maʊs/', translation: '老鼠', definition: 'A tiny animal with a long tail.' },
+  ],
+  N: [
+    { word: 'Nest', pronunciation: '/nest/', translation: '鸟巢', definition: 'A home a bird builds.' },
+    { word: 'Nose', pronunciation: '/noʊz/', translation: '鼻子', definition: 'You use it to smell.' },
+    { word: 'Net', pronunciation: '/net/', translation: '网', definition: 'You catch fish with it.' },
+  ],
+  O: [
+    { word: 'Orange', pronunciation: '/ˈɔːr.ɪndʒ/', translation: '橙子', definition: 'A round orange fruit.' },
+    { word: 'Owl', pronunciation: '/aʊl/', translation: '猫头鹰', definition: 'A bird that hoots at night.' },
+    { word: 'Octopus', pronunciation: '/ˈɑːk.tə.pəs/', translation: '章鱼', definition: 'A sea animal with eight arms.' },
+  ],
+  P: [
+    { word: 'Pig', pronunciation: '/pɪɡ/', translation: '猪', definition: 'A pink farm animal.' },
+    { word: 'Pizza', pronunciation: '/ˈpiːt.sə/', translation: '披萨', definition: 'A round food with cheese on top.' },
+    { word: 'Pear', pronunciation: '/per/', translation: '梨', definition: 'A sweet green fruit.' },
+  ],
+  Q: [
+    { word: 'Queen', pronunciation: '/kwiːn/', translation: '女王', definition: 'A woman who rules a country.' },
+    { word: 'Quilt', pronunciation: '/kwɪlt/', translation: '被子', definition: 'A warm cover for your bed.' },
+    { word: 'Question', pronunciation: '/ˈkwes.tʃən/', translation: '问题', definition: 'Something you ask to learn.' },
+  ],
+  R: [
+    { word: 'Rabbit', pronunciation: '/ˈræb.ɪt/', translation: '兔子', definition: 'A small animal with long ears.' },
+    { word: 'Rainbow', pronunciation: '/ˈreɪn.boʊ/', translation: '彩虹', definition: 'Colors in the sky after rain.' },
+    { word: 'Robot', pronunciation: '/ˈroʊ.bɑːt/', translation: '机器人', definition: 'A machine that can move on its own.' },
+  ],
+  S: [
+    { word: 'Sun', pronunciation: '/sʌn/', translation: '太阳', definition: 'The bright light in the daytime sky.' },
+    { word: 'Star', pronunciation: '/stɑːr/', translation: '星星', definition: 'A bright light in the night sky.' },
+    { word: 'Snake', pronunciation: '/sneɪk/', translation: '蛇', definition: 'A long animal with no legs.' },
+  ],
+  T: [
+    { word: 'Tree', pronunciation: '/triː/', translation: '树', definition: 'A tall plant with leaves and branches.' },
+    { word: 'Tiger', pronunciation: '/ˈtaɪ.ɡər/', translation: '老虎', definition: 'A big striped wild cat.' },
+    { word: 'Train', pronunciation: '/treɪn/', translation: '火车', definition: 'A long vehicle that runs on tracks.' },
+  ],
+  U: [
+    { word: 'Umbrella', pronunciation: '/ʌmˈbrel.ə/', translation: '雨伞', definition: 'You hold it over your head in the rain.' },
+    { word: 'Unicorn', pronunciation: '/ˈjuː.nɪ.kɔːrn/', translation: '独角兽', definition: 'A make-believe horse with one horn.' },
+    { word: 'Up', pronunciation: '/ʌp/', translation: '向上', definition: 'Toward a higher place.' },
+  ],
+  V: [
+    { word: 'Van', pronunciation: '/væn/', translation: '面包车', definition: 'A big boxy car.' },
+    { word: 'Vase', pronunciation: '/veɪs/', translation: '花瓶', definition: 'A jar to hold flowers.' },
+    { word: 'Violin', pronunciation: '/ˌvaɪ.əˈlɪn/', translation: '小提琴', definition: 'A music instrument you play with a bow.' },
+  ],
+  W: [
+    { word: 'Whale', pronunciation: '/weɪl/', translation: '鲸鱼', definition: 'The biggest animal in the sea.' },
+    { word: 'Watermelon', pronunciation: '/ˈwɔː.tərˌmel.ən/', translation: '西瓜', definition: 'A big green fruit that is red inside.' },
+    { word: 'Window', pronunciation: '/ˈwɪn.doʊ/', translation: '窗户', definition: 'A glass opening in a wall.' },
+  ],
+  X: [
+    { word: 'Xylophone', pronunciation: '/ˈzaɪ.lə.foʊn/', translation: '木琴', definition: 'A music toy you hit with sticks.' },
+    { word: 'Box', pronunciation: '/bɒks/', translation: '盒子', definition: 'A square container.' },
+    { word: 'Fox', pronunciation: '/fɒks/', translation: '狐狸', definition: 'A clever orange animal.' },
+  ],
+  Y: [
+    { word: 'Yellow', pronunciation: '/ˈjel.oʊ/', translation: '黄色', definition: 'The color of the sun.' },
+    { word: 'Yo-yo', pronunciation: '/ˈjoʊ.joʊ/', translation: '溜溜球', definition: 'A round toy on a string.' },
+    { word: 'Yak', pronunciation: '/jæk/', translation: '牦牛', definition: 'A big shaggy mountain animal.' },
+  ],
+  Z: [
+    { word: 'Zebra', pronunciation: '/ˈziː.brə/', translation: '斑马', definition: 'A horse with black and white stripes.' },
+    { word: 'Zoo', pronunciation: '/zuː/', translation: '动物园', definition: 'A place to see many animals.' },
+    { word: 'Zero', pronunciation: '/ˈzɪr.oʊ/', translation: '零', definition: 'The number 0, meaning none.' },
+  ],
 };
 
 const TOPICS: Record<string, BaseWord[]> = {
@@ -82,7 +202,7 @@ const TOPICS: Record<string, BaseWord[]> = {
     { word: 'Truck', pronunciation: '/trʌk/', translation: '卡车', definition: 'A big vehicle that carries heavy things.' },
     { word: 'Ship', pronunciation: '/ʃɪp/', translation: '轮船', definition: 'A very big boat.' },
     { word: 'Helicopter', pronunciation: '/ˈhel.ɪˌkɑːp.tər/', translation: '直升机', definition: 'A flying machine with spinning blades.' },
-    { word: 'Rocket', pronunciation: '/ˈrɑː.kɪt/', translation: '火箭', definition: 'A vehicle that flies into space.' },
+    { word: 'Taxi', pronunciation: '/ˈtæk.si/', translation: '出租车', definition: 'A car you pay to ride in.' },
     { word: 'Scooter', pronunciation: '/ˈskuː.tər/', translation: '滑板车', definition: 'A small vehicle you push with your foot.' },
   ],
   'Body Parts': [
@@ -132,10 +252,10 @@ const TOPICS: Record<string, BaseWord[]> = {
     { word: 'Mountain', pronunciation: '/ˈmaʊn.tən/', translation: '山', definition: 'A very tall, rocky hill.' },
     { word: 'Rock', pronunciation: '/rɑːk/', translation: '石头', definition: 'A hard piece of stone.' },
     { word: 'Leaf', pronunciation: '/liːf/', translation: '叶子', definition: 'A flat green part of a tree.' },
-    { word: 'Cloud', pronunciation: '/klaʊd/', translation: '云', definition: 'A fluffy white shape in the sky.' },
+    { word: 'Hill', pronunciation: '/hɪl/', translation: '小山', definition: 'A small mountain.' },
     { word: 'Lake', pronunciation: '/leɪk/', translation: '湖', definition: 'A big pool of water.' },
     { word: 'Forest', pronunciation: '/ˈfɔːr.ɪst/', translation: '森林', definition: 'A place with many trees.' },
-    { word: 'Rainbow', pronunciation: '/ˈreɪn.boʊ/', translation: '彩虹', definition: 'Colors in the sky after rain.' },
+    { word: 'Bush', pronunciation: '/bʊʃ/', translation: '灌木', definition: 'A small low plant with many branches.' },
   ],
   'Yummy Food': [
     { word: 'Pizza', pronunciation: '/ˈpiːt.sə/', translation: '披萨', definition: 'A round food with cheese on top.' },
@@ -187,7 +307,6 @@ const TOPICS: Record<string, BaseWord[]> = {
     { word: 'Eight', pronunciation: '/eɪt/', translation: '八', definition: 'The number 8.' },
     { word: 'Nine', pronunciation: '/naɪn/', translation: '九', definition: 'The number 9.' },
     { word: 'Ten', pronunciation: '/ten/', translation: '十', definition: 'The number 10.' },
-    { word: 'Zero', pronunciation: '/ˈzɪr.oʊ/', translation: '零', definition: 'The number 0, meaning none.' },
   ],
   'Shapes': [
     { word: 'Circle', pronunciation: '/ˈsɜːr.kəl/', translation: '圆形', definition: 'A round shape, like a wheel.' },
@@ -198,9 +317,9 @@ const TOPICS: Record<string, BaseWord[]> = {
     { word: 'Heart', pronunciation: '/hɑːrt/', translation: '心形', definition: 'The shape you give for love.' },
     { word: 'Oval', pronunciation: '/ˈoʊ.vəl/', translation: '椭圆形', definition: 'A shape like a stretched circle.' },
     { word: 'Diamond', pronunciation: '/ˈdaɪ.mənd/', translation: '菱形', definition: 'A shape like a tilted square.' },
-    { word: 'Moon', pronunciation: '/muːn/', translation: '月牙形', definition: 'A curved shape like the moon.' },
-    { word: 'Arrow', pronunciation: '/ˈer.oʊ/', translation: '箭头', definition: 'A shape that points one way.' },
-    { word: 'Cross', pronunciation: '/krɔːs/', translation: '十字', definition: 'A shape made of two crossing lines.' },
+    { word: 'Crescent', pronunciation: '/ˈkres.ənt/', translation: '月牙形', definition: 'A curved shape like a new moon.' },
+    { word: 'Pentagon', pronunciation: '/ˈpen.tə.ɡɑːn/', translation: '五边形', definition: 'A shape with five sides.' },
+    { word: 'Hexagon', pronunciation: '/ˈhek.sə.ɡɑːn/', translation: '六边形', definition: 'A shape with six sides, like a honeycomb cell.' },
   ],
   'Weather': [
     { word: 'Sun', pronunciation: '/sʌn/', translation: '太阳', definition: 'It makes the day warm and bright.' },
@@ -218,13 +337,13 @@ const TOPICS: Record<string, BaseWord[]> = {
   'Toys': [
     { word: 'Ball', pronunciation: '/bɔːl/', translation: '球', definition: 'A round toy you can throw.' },
     { word: 'Doll', pronunciation: '/dɑːl/', translation: '娃娃', definition: 'A toy that looks like a person.' },
-    { word: 'Car', pronunciation: '/kɑːr/', translation: '玩具车', definition: 'A small toy you push around.' },
+    { word: 'Teddy', pronunciation: '/ˈted.i/', translation: '玩具熊', definition: 'A soft cuddly toy bear.' },
     { word: 'Blocks', pronunciation: '/blɑːks/', translation: '积木', definition: 'Small bricks you stack up.' },
     { word: 'Puzzle', pronunciation: '/ˈpʌz.əl/', translation: '拼图', definition: 'Pieces you put together to make a picture.' },
-    { word: 'Bear', pronunciation: '/ber/', translation: '玩具熊', definition: 'A soft cuddly toy animal.' },
+    { word: 'Yo-yo', pronunciation: '/ˈjoʊ.joʊ/', translation: '溜溜球', definition: 'A round toy that goes up and down on a string.' },
     { word: 'Kite', pronunciation: '/kaɪt/', translation: '风筝', definition: 'A toy that flies on the wind.' },
     { word: 'Drum', pronunciation: '/drʌm/', translation: '鼓', definition: 'A toy that makes loud beats.' },
-    { word: 'Train', pronunciation: '/treɪn/', translation: '玩具火车', definition: 'A toy that runs on tracks.' },
+    { word: 'Top', pronunciation: '/tɒp/', translation: '陀螺', definition: 'A toy that spins around.' },
     { word: 'Robot', pronunciation: '/ˈroʊ.bɑːt/', translation: '机器人', definition: 'A toy that moves like a machine.' },
     { word: 'Balloon', pronunciation: '/bəˈluːn/', translation: '气球', definition: 'A toy you blow up with air.' },
   ],
@@ -368,12 +487,9 @@ export function getFallbackVocabulary(topic: string, category: LessonCategory): 
   if (category === 'alphabet') {
     const letter = topic.replace(/^Letter\s+/i, '').trim().toUpperCase();
     if (ALPHABET[letter]) return ALPHABET[letter];
-    // Auto-generate trivial placeholders so the lesson is at least playable.
-    return [
-      { word: `${letter}pple`, pronunciation: `/${letter.toLowerCase()}/`, translation: `${letter} 开头的词`, definition: `A word starting with ${letter}.` },
-      { word: `${letter}all`,  pronunciation: `/${letter.toLowerCase()}/`, translation: `${letter} 开头的词`, definition: `Another word starting with ${letter}.` },
-      { word: `${letter}ar`,   pronunciation: `/${letter.toLowerCase()}/`, translation: `${letter} 开头的词`, definition: `One more word starting with ${letter}.` },
-    ];
+    // Unknown letter: fall back to a small set of generic words instead of
+    // synthesizing fake non-existent words.
+    return GENERIC.slice(0, 3);
   }
   if (category === 'phonetics') {
     return PHONETICS[topic] ?? GENERIC;

@@ -26,9 +26,12 @@ export const generateVocabulary = async (
 
   switch (category) {
     case 'alphabet':
-      prompt = `Generate 3 distinct, simple English words for a 5-year-old child that start with the letter "${topic}".
-      Ensure the words are concrete nouns (like animals, fruits, objects) that are easy to visualize.
-      Include the word, a simple pronunciation guide, a Chinese translation, and a very simple definition.`;
+      prompt = `Generate 3 distinct, simple, REAL English words for a 5-year-old child that start with the letter "${topic}".
+      Strict rules:
+      - Every word MUST be a real, common English word found in a dictionary. Do NOT invent, blend, or modify words. For example, do not return "Ipple" or "Cpple" – those are not real words.
+      - Words MUST be concrete nouns that are easy to picture (animals, fruits, everyday objects, vehicles, etc.).
+      - Words MUST actually start with the letter "${topic}" (case-insensitive).
+      For each word include: the word, a simple pronunciation guide, a Chinese translation, and a very simple definition for a 5-year-old.`;
       break;
     case 'phonetics':
       prompt = `Generate 10 distinct, simple English words for a child that clearly demonstrate the phonetic sound "${topic}".
