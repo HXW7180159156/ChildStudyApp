@@ -1828,6 +1828,7 @@ const SVGS: Record<string, string> = {
   <path d="M150 90 Q180 90 180 120 Q180 150 150 150" stroke="#3D8BFD" stroke-width="6" fill="none"/>
   <ellipse cx="100" cy="74" rx="40" ry="6" fill="#FFFFFF" opacity="0.6"/>
 </svg>`,
+};
 
 /** Color palette used for the generic fallback card. */
 const FALLBACK_PALETTE: Array<{ bg: string; fg: string; accent: string }> = [
