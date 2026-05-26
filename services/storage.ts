@@ -1,12 +1,11 @@
 import { LessonProgress, ProgressMap, CachedLesson, CachedWord } from '../types';
 
 const PROGRESS_KEY = 'lingoquest:progress:v1';
-// v3: bumped after adding many more curated SVG illustrations for the alphabet
-// vocabulary; existing caches still contain the older generic letter-initial
-// fallback images for those words, so we invalidate them to pick up the new
-// hand-drawn illustrations. Also continues to guard against any pre-v2 cached
+// v4: bumped after adding dedicated non-generic illustrations for all built-in
+// Letters, Sounds, and Themes vocabulary that previously displayed generic
+// initial-card fallback images. Also continues to guard against older cached
 // vocab that may have contained auto-synthesized non-words (e.g. "Ipple").
-const CACHE_PREFIX = 'lingoquest:cache:v3:';
+const CACHE_PREFIX = 'lingoquest:cache:v4:';
 
 // --- Progress ---------------------------------------------------------------
 
