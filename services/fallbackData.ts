@@ -1,10 +1,10 @@
 import { LessonCategory, WordItem } from '../types';
 
-type BaseWord = Omit<WordItem, 'imageUrl' | 'audioBase64' | 'audioBuffer'>;
+type BaseWord = Omit<WordItem, 'imageUrl'>;
 
 /**
- * Hand-curated sample vocabulary used when no API key is configured, or when
- * the Gemini API call fails. Keeps the app fully usable for offline preview.
+ * Hand-curated vocabulary that keeps the app fully usable without network
+ * access.
  */
 const ALPHABET: Record<string, BaseWord[]> = {
   A: [

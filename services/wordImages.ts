@@ -1,9 +1,8 @@
 /**
  * Hand-crafted SVG illustrations for the built-in vocabulary words.
  *
- * Used as the primary "image" source when no Gemini API key is configured, and
- * as a fallback when image generation fails. SVGs are resolution-independent so
- * they remain crisp on any screen size.
+ * Used as the app's image source. SVGs are resolution-independent so they
+ * remain crisp on any screen size.
  */
 
 // Each SVG is a 200x200 viewBox, square, drawn on a soft pastel background

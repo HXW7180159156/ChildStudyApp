@@ -16,10 +16,6 @@ export interface WordItem {
   translation: string;   // Chinese translation
   definition: string;    // Simple English definition
   imageUrl?: string;     // Base64 data URL or remote URL
-  /** Raw base64 PCM audio (24kHz mono) returned by Gemini TTS. Cached in storage. */
-  audioBase64?: string;
-  /** Decoded AudioBuffer for runtime playback. Not persisted. */
-  audioBuffer?: AudioBuffer;
 }
 
 export interface LessonConfig {
@@ -45,8 +41,8 @@ export interface LessonProgress {
 
 export type ProgressMap = Record<string, LessonProgress>;
 
-/** Cached lesson content (without the AudioBuffer, which can't be serialized). */
-export type CachedWord = Omit<WordItem, 'audioBuffer'>;
+/** Cached lesson content. */
+export type CachedWord = WordItem;
 
 export interface CachedLesson {
   lessonId: string;

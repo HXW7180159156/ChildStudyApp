@@ -1,13 +1,11 @@
 /**
- * Browser-native speech synthesis fallback.
+ * Browser-native speech synthesis for word pronunciation.
  *
- * Used when Gemini TTS is unavailable (no API key, request failure, or cached
- * lessons that pre-date audio generation). Relies on the Web Speech API, which
- * is supported in all evergreen browsers and requires no network access.
+ * Relies on the Web Speech API, which is supported in all evergreen browsers
+ * and requires no network access.
  */
 
 import { WordItem } from '../types';
-import { playAudioBuffer } from './audioUtils';
 
 const isBrowserSpeechAvailable = (): boolean =>
   typeof window !== 'undefined' && typeof window.speechSynthesis !== 'undefined';
@@ -61,14 +59,9 @@ export function speakText(text: string): boolean {
 }
 
 /**
- * Plays the pronunciation for a word, preferring the high-quality Gemini TTS
- * audio buffer when present and falling back to the browser's built-in speech
- * synthesis so children always hear the word read aloud.
+ * Plays the pronunciation for a word using the browser's built-in speech
+ * synthesis so children can hear the word read aloud.
  */
-export function speakWord(item: WordItem, audioContext: AudioContext | null): void {
-  if (audioContext && item.audioBuffer) {
-    playAudioBuffer(item.audioBuffer, audioContext);
-    return;
-  }
+export function speakWord(item: WordItem): void {
   speakText(item.word);
 }

@@ -4,7 +4,7 @@ const PROGRESS_KEY = 'lingoquest:progress:v1';
 // v4: bumped after adding dedicated non-generic illustrations for all built-in
 // Letters, Sounds, and Themes vocabulary that previously displayed generic
 // initial-card fallback images. Also continues to guard against older cached
-// vocab that may have contained auto-synthesized non-words (e.g. "Ipple").
+// vocab that may have contained older invalid words (e.g. "Ipple").
 const CACHE_PREFIX = 'lingoquest:cache:v4:';
 
 // --- Progress ---------------------------------------------------------------
