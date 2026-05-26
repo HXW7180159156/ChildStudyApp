@@ -1227,7 +1227,607 @@ const SVGS: Record<string, string> = {
   <rect x="150" y="150" width="8" height="24" fill="#2A1B0F"/>
   <circle cx="176" cy="78" r="3" fill="#2A1B0F"/>
 </svg>`,
-};
+
+  alien: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Alien">
+  <rect width="200" height="200" fill="#E8FFE0"/>
+  <path d="M100 30 C60 30 44 64 50 100 C56 138 80 168 100 168 C120 168 144 138 150 100 C156 64 140 30 100 30 Z" fill="#7BC96F"/>
+  <line x1="76" y1="34" x2="64" y2="14" stroke="#3A6E2F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="124" y1="34" x2="136" y2="14" stroke="#3A6E2F" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="64" cy="14" r="6" fill="#FFD93D"/>
+  <circle cx="136" cy="14" r="6" fill="#FFD93D"/>
+  <ellipse cx="76" cy="96" rx="14" ry="20" fill="#1A1A1A"/>
+  <ellipse cx="124" cy="96" rx="14" ry="20" fill="#1A1A1A"/>
+  <ellipse cx="72" cy="90" rx="4" ry="6" fill="#FFFFFF"/>
+  <ellipse cx="120" cy="90" rx="4" ry="6" fill="#FFFFFF"/>
+  <path d="M84 138 Q100 148 116 138" stroke="#3A6E2F" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>`,
+
+  arm: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Arm">
+  <rect width="200" height="200" fill="#FFF1E0"/>
+  <path d="M30 130 Q40 80 90 70 L130 70 Q150 70 150 50 Q150 30 130 30 L100 30" stroke="#F2C79A" stroke-width="36" fill="none" stroke-linecap="round"/>
+  <circle cx="92" cy="30" r="22" fill="#F2C79A"/>
+  <path d="M76 28 Q86 18 96 26 M96 26 Q104 18 112 28 M112 28 Q120 22 124 32" stroke="#E0A877" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <ellipse cx="120" cy="110" rx="14" ry="10" fill="#E0A877" opacity="0.5"/>
+</svg>`,
+
+  astronaut: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Astronaut">
+  <rect width="200" height="200" fill="#0E1A40"/>
+  <circle cx="40" cy="40" r="2" fill="#FFF"/>
+  <circle cx="170" cy="50" r="2" fill="#FFF"/>
+  <circle cx="160" cy="160" r="2" fill="#FFF"/>
+  <circle cx="30" cy="150" r="2" fill="#FFF"/>
+  <rect x="60" y="100" width="80" height="70" rx="12" fill="#F0F0F0"/>
+  <circle cx="100" cy="70" r="40" fill="#F0F0F0"/>
+  <path d="M70 70 Q70 38 100 38 Q130 38 130 70 L130 86 Q100 96 70 86 Z" fill="#9BD3FF" opacity="0.9"/>
+  <rect x="78" y="62" width="44" height="22" rx="6" fill="#2A4A7F"/>
+  <circle cx="92" cy="73" r="4" fill="#A8CCFF"/>
+  <rect x="50" y="120" width="14" height="32" rx="4" fill="#DADADA"/>
+  <rect x="136" y="120" width="14" height="32" rx="4" fill="#DADADA"/>
+  <circle cx="100" cy="135" r="8" fill="#E63946"/>
+</svg>`,
+
+  aunt: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Aunt">
+  <rect width="200" height="200" fill="#FFE8F1"/>
+  <path d="M58 70 Q58 30 100 30 Q142 30 142 70 L142 96 Q100 110 58 96 Z" fill="#5A3A2A"/>
+  <circle cx="100" cy="76" r="34" fill="#F2C79A"/>
+  <circle cx="88" cy="74" r="3" fill="#2A1B0F"/>
+  <circle cx="112" cy="74" r="3" fill="#2A1B0F"/>
+  <path d="M88 88 Q100 96 112 88" stroke="#C04060" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="80" cy="82" r="4" fill="#FFB1B1" opacity="0.6"/>
+  <circle cx="120" cy="82" r="4" fill="#FFB1B1" opacity="0.6"/>
+  <path d="M60 180 Q60 120 100 120 Q140 120 140 180 Z" fill="#E07AAA"/>
+  <circle cx="100" cy="148" r="6" fill="#FFD93D"/>
+</svg>`,
+
+  baby: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Baby">
+  <rect width="200" height="200" fill="#FFF1F6"/>
+  <circle cx="100" cy="100" r="68" fill="#F8D2B5"/>
+  <path d="M80 50 Q90 30 100 50 Q110 30 120 50" stroke="#7A4A21" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="82" cy="100" r="6" fill="#2A1B0F"/>
+  <circle cx="118" cy="100" r="6" fill="#2A1B0F"/>
+  <circle cx="80" cy="98" r="2" fill="#FFF"/>
+  <circle cx="116" cy="98" r="2" fill="#FFF"/>
+  <circle cx="66" cy="118" r="8" fill="#FFB1B1" opacity="0.7"/>
+  <circle cx="134" cy="118" r="8" fill="#FFB1B1" opacity="0.7"/>
+  <path d="M86 130 Q100 144 114 130" stroke="#C04060" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>`,
+
+  balloon: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Balloon">
+  <rect width="200" height="200" fill="#E8F4FF"/>
+  <ellipse cx="100" cy="80" rx="50" ry="60" fill="#E63946"/>
+  <ellipse cx="84" cy="60" rx="12" ry="18" fill="#FFFFFF" opacity="0.4"/>
+  <polygon points="92,140 108,140 100,150" fill="#9B2030"/>
+  <path d="M100 150 Q90 170 100 184 Q110 198 100 200" stroke="#3A3A3A" stroke-width="2" fill="none"/>
+</svg>`,
+
+  bath: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bath">
+  <rect width="200" height="200" fill="#D9F0FF"/>
+  <path d="M30 110 L170 110 Q170 160 130 160 L70 160 Q30 160 30 110 Z" fill="#FFFFFF" stroke="#4A6FA5" stroke-width="4"/>
+  <ellipse cx="100" cy="118" rx="64" ry="8" fill="#9BD3FF"/>
+  <circle cx="70" cy="100" r="10" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="100" cy="90" r="14" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="130" cy="100" r="10" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="86" cy="76" r="6" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="118" cy="76" r="6" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="34" y="160" width="8" height="20" fill="#4A6FA5"/>
+  <rect x="158" y="160" width="8" height="20" fill="#4A6FA5"/>
+</svg>`,
+
+  beach: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Beach">
+  <rect width="200" height="120" fill="#9BD3FF"/>
+  <rect y="120" width="200" height="80" fill="#FFE7B3"/>
+  <circle cx="160" cy="40" r="22" fill="#FFD93D"/>
+  <path d="M0 120 Q50 110 100 120 T200 120 L200 130 L0 130 Z" fill="#3D8BFD" opacity="0.6"/>
+  <path d="M60 130 L60 70 Q90 50 120 70 L120 130 Z" fill="#E63946"/>
+  <line x1="60" y1="70" x2="120" y2="70" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="160" stroke="#7A4A21" stroke-width="4"/>
+  <circle cx="40" cy="160" r="6" fill="#FFC59B"/>
+  <circle cx="160" cy="170" r="6" fill="#FFC59B"/>
+</svg>`,
+
+  bed: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bed">
+  <rect width="200" height="200" fill="#FFF3D6"/>
+  <rect x="20" y="80" width="40" height="80" fill="#8B5A2B"/>
+  <rect x="20" y="120" width="160" height="40" fill="#A0703D"/>
+  <rect x="30" y="100" width="50" height="30" rx="6" fill="#FFFFFF"/>
+  <rect x="80" y="110" width="100" height="20" fill="#3D8BFD"/>
+  <path d="M80 120 L180 120 L180 130 L80 130 Z" fill="#2A5FBD"/>
+  <rect x="20" y="155" width="10" height="20" fill="#5A3A1F"/>
+  <rect x="170" y="155" width="10" height="20" fill="#5A3A1F"/>
+  <text x="44" y="60" font-size="36" text-anchor="middle">💤</text>
+</svg>`,
+
+  bell: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bell">
+  <rect width="200" height="200" fill="#FFF8C6"/>
+  <rect x="92" y="28" width="16" height="14" rx="4" fill="#7A4A21"/>
+  <path d="M60 140 Q60 60 100 60 Q140 60 140 140 Z" fill="#FFB52E"/>
+  <ellipse cx="100" cy="60" rx="14" ry="6" fill="#D88A0F"/>
+  <ellipse cx="100" cy="140" rx="44" ry="10" fill="#D88A0F"/>
+  <circle cx="100" cy="160" r="10" fill="#7A4A21"/>
+  <path d="M70 110 Q70 80 100 76" stroke="#FFE49A" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>`,
+
+  bike: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bike">
+  <rect width="200" height="200" fill="#E8F4FF"/>
+  <circle cx="50" cy="140" r="30" fill="none" stroke="#2A2A2A" stroke-width="6"/>
+  <circle cx="150" cy="140" r="30" fill="none" stroke="#2A2A2A" stroke-width="6"/>
+  <circle cx="50" cy="140" r="4" fill="#2A2A2A"/>
+  <circle cx="150" cy="140" r="4" fill="#2A2A2A"/>
+  <g stroke="#E63946" stroke-width="5" stroke-linecap="round" fill="none">
+    <line x1="50" y1="140" x2="100" y2="140"/>
+    <line x1="100" y1="140" x2="150" y2="140"/>
+    <line x1="100" y1="140" x2="120" y2="80"/>
+    <line x1="50" y1="140" x2="120" y2="80"/>
+    <line x1="120" y1="80" x2="150" y2="140"/>
+  </g>
+  <line x1="115" y1="68" x2="135" y2="68" stroke="#2A2A2A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="125" y1="68" x2="125" y2="82" stroke="#2A2A2A" stroke-width="4"/>
+  <ellipse cx="98" cy="135" rx="14" ry="5" fill="#2A2A2A"/>
+  <g stroke="#9BB8DD" stroke-width="2">
+    <line x1="50" y1="140" x2="80" y2="140"/>
+    <line x1="50" y1="140" x2="50" y2="110"/>
+    <line x1="50" y1="140" x2="20" y2="140"/>
+    <line x1="50" y1="140" x2="50" y2="170"/>
+  </g>
+</svg>`,
+
+  bird: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bird">
+  <rect width="200" height="200" fill="#D9F0FF"/>
+  <ellipse cx="100" cy="120" rx="50" ry="40" fill="#3D8BFD"/>
+  <circle cx="140" cy="90" r="28" fill="#3D8BFD"/>
+  <circle cx="148" cy="86" r="5" fill="#FFFFFF"/>
+  <circle cx="150" cy="86" r="2.5" fill="#1A1A1A"/>
+  <polygon points="166,92 184,90 166,100" fill="#FFB52E"/>
+  <path d="M70 110 Q40 90 36 130 Q60 130 80 130 Z" fill="#1E5FBD"/>
+  <line x1="110" y1="158" x2="108" y2="180" stroke="#FFB52E" stroke-width="3"/>
+  <line x1="130" y1="158" x2="128" y2="180" stroke="#FFB52E" stroke-width="3"/>
+</svg>`,
+
+  black: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Black">
+  <rect width="200" height="200" fill="#F0F0F0"/>
+  <circle cx="100" cy="100" r="70" fill="#1A1A1A"/>
+  <circle cx="76" cy="76" r="14" fill="#3A3A3A"/>
+  <text x="100" y="178" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-size="20" font-weight="bold" fill="#1A1A1A">Black</text>
+</svg>`,
+
+  block: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Block">
+  <rect width="200" height="200" fill="#FFF3D6"/>
+  <rect x="40" y="110" width="60" height="60" fill="#E63946" stroke="#9B2030" stroke-width="3"/>
+  <text x="70" y="152" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF">A</text>
+  <rect x="100" y="110" width="60" height="60" fill="#3D8BFD" stroke="#1E5FBD" stroke-width="3"/>
+  <text x="130" y="152" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF">B</text>
+  <rect x="70" y="50" width="60" height="60" fill="#FFD93D" stroke="#C9A227" stroke-width="3"/>
+  <text x="100" y="92" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-size="36" font-weight="bold" fill="#7A4A21">C</text>
+</svg>`,
+
+  boat: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Boat">
+  <rect width="200" height="120" fill="#9BD3FF"/>
+  <rect y="120" width="200" height="80" fill="#3D8BFD"/>
+  <path d="M30 130 L170 130 L150 170 L50 170 Z" fill="#8B5A2B"/>
+  <rect x="98" y="50" width="6" height="80" fill="#7A4A21"/>
+  <polygon points="104,50 104,120 160,120" fill="#FFFFFF"/>
+  <polygon points="98,60 98,120 50,120" fill="#FFE0E0"/>
+  <path d="M0 160 Q50 150 100 160 T200 160" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.7"/>
+</svg>`,
+
+  book: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Book">
+  <rect width="200" height="200" fill="#FFF3D6"/>
+  <path d="M20 50 L100 60 L180 50 L180 160 L100 170 L20 160 Z" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="3"/>
+  <line x1="100" y1="60" x2="100" y2="170" stroke="#3A3A3A" stroke-width="3"/>
+  <g stroke="#9BB8DD" stroke-width="2">
+    <line x1="34" y1="80" x2="88" y2="86"/>
+    <line x1="34" y1="100" x2="88" y2="104"/>
+    <line x1="34" y1="120" x2="88" y2="122"/>
+    <line x1="34" y1="140" x2="88" y2="140"/>
+    <line x1="112" y1="86" x2="166" y2="80"/>
+    <line x1="112" y1="104" x2="166" y2="100"/>
+    <line x1="112" y1="122" x2="166" y2="120"/>
+    <line x1="112" y1="140" x2="166" y2="140"/>
+  </g>
+  <path d="M20 50 Q100 30 180 50 L180 60 Q100 40 20 60 Z" fill="#E63946"/>
+</svg>`,
+
+  boot: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Boot">
+  <rect width="200" height="200" fill="#E6F7D9"/>
+  <path d="M70 30 L130 30 L130 130 L170 130 L170 170 L70 170 Z" fill="#7A4A21" stroke="#3A2A1F" stroke-width="4"/>
+  <rect x="70" y="160" width="100" height="14" fill="#3A2A1F"/>
+  <g stroke="#FFD93D" stroke-width="3">
+    <line x1="84" y1="60" x2="116" y2="60"/>
+    <line x1="84" y1="80" x2="116" y2="80"/>
+    <line x1="84" y1="100" x2="116" y2="100"/>
+  </g>
+  <circle cx="84" cy="60" r="3" fill="#FFD93D"/>
+  <circle cx="116" cy="60" r="3" fill="#FFD93D"/>
+  <circle cx="84" cy="80" r="3" fill="#FFD93D"/>
+  <circle cx="116" cy="80" r="3" fill="#FFD93D"/>
+</svg>`,
+
+  bread: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bread">
+  <rect width="200" height="200" fill="#FFF1D6"/>
+  <path d="M30 80 Q40 50 70 50 Q80 30 110 40 Q140 30 150 60 Q180 60 175 100 L170 150 Q170 170 150 170 L50 170 Q30 170 30 150 Z" fill="#D4A574" stroke="#7A4A21" stroke-width="4"/>
+  <path d="M50 120 L170 120" stroke="#A0703D" stroke-width="2"/>
+  <ellipse cx="80" cy="90" rx="6" ry="3" fill="#7A4A21" opacity="0.4"/>
+  <ellipse cx="120" cy="80" rx="6" ry="3" fill="#7A4A21" opacity="0.4"/>
+  <ellipse cx="140" cy="100" rx="6" ry="3" fill="#7A4A21" opacity="0.4"/>
+</svg>`,
+
+  brother: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Brother">
+  <rect width="200" height="200" fill="#D9F0FF"/>
+  <circle cx="100" cy="70" r="36" fill="#F2C79A"/>
+  <path d="M64 64 Q64 36 100 36 Q136 36 136 64 L136 72 L64 72 Z" fill="#3A2A1F"/>
+  <circle cx="88" cy="72" r="3" fill="#2A1B0F"/>
+  <circle cx="112" cy="72" r="3" fill="#2A1B0F"/>
+  <path d="M88 86 Q100 94 112 86" stroke="#C04060" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M50 180 Q50 110 100 110 Q150 110 150 180 Z" fill="#3D8BFD"/>
+  <rect x="92" y="120" width="16" height="40" fill="#FFD93D"/>
+</svg>`,
+
+  brown: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Brown">
+  <rect width="200" height="200" fill="#F0E5D8"/>
+  <circle cx="100" cy="100" r="70" fill="#8B5A2B"/>
+  <circle cx="76" cy="76" r="14" fill="#A0703D"/>
+  <text x="100" y="178" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-size="20" font-weight="bold" fill="#8B5A2B">Brown</text>
+</svg>`,
+
+  brush: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Brush">
+  <rect width="200" height="200" fill="#E8F4FF"/>
+  <rect x="40" y="80" width="80" height="40" rx="8" fill="#E63946"/>
+  <rect x="116" y="92" width="60" height="16" rx="6" fill="#7A4A21"/>
+  <g stroke="#FFFFFF" stroke-width="3">
+    <line x1="50" y1="120" x2="50" y2="150"/>
+    <line x1="62" y1="120" x2="62" y2="152"/>
+    <line x1="74" y1="120" x2="74" y2="150"/>
+    <line x1="86" y1="120" x2="86" y2="154"/>
+    <line x1="98" y1="120" x2="98" y2="150"/>
+    <line x1="110" y1="120" x2="110" y2="152"/>
+  </g>
+</svg>`,
+
+  bug: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bug">
+  <rect width="200" height="200" fill="#E6F7D9"/>
+  <ellipse cx="100" cy="110" rx="60" ry="50" fill="#E63946"/>
+  <path d="M100 60 L100 160" stroke="#1A1A1A" stroke-width="4"/>
+  <circle cx="70" cy="90" r="8" fill="#1A1A1A"/>
+  <circle cx="130" cy="90" r="8" fill="#1A1A1A"/>
+  <circle cx="70" cy="130" r="8" fill="#1A1A1A"/>
+  <circle cx="130" cy="130" r="8" fill="#1A1A1A"/>
+  <circle cx="100" cy="150" r="6" fill="#1A1A1A"/>
+  <ellipse cx="100" cy="60" rx="22" ry="16" fill="#1A1A1A"/>
+  <line x1="88" y1="48" x2="80" y2="32" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+  <line x1="112" y1="48" x2="120" y2="32" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="80" cy="32" r="3" fill="#1A1A1A"/>
+  <circle cx="120" cy="32" r="3" fill="#1A1A1A"/>
+  <g stroke="#1A1A1A" stroke-width="3" stroke-linecap="round">
+    <line x1="44" y1="100" x2="20" y2="90"/>
+    <line x1="44" y1="120" x2="20" y2="130"/>
+    <line x1="156" y1="100" x2="180" y2="90"/>
+    <line x1="156" y1="120" x2="180" y2="130"/>
+  </g>
+</svg>`,
+
+  bus: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bus">
+  <rect width="200" height="200" fill="#FFF8C6"/>
+  <rect x="20" y="70" width="160" height="80" rx="10" fill="#FFB52E" stroke="#D88A0F" stroke-width="3"/>
+  <rect x="30" y="84" width="30" height="26" fill="#9BD3FF" stroke="#2A5FBD" stroke-width="2"/>
+  <rect x="68" y="84" width="30" height="26" fill="#9BD3FF" stroke="#2A5FBD" stroke-width="2"/>
+  <rect x="106" y="84" width="30" height="26" fill="#9BD3FF" stroke="#2A5FBD" stroke-width="2"/>
+  <rect x="144" y="84" width="28" height="26" fill="#9BD3FF" stroke="#2A5FBD" stroke-width="2"/>
+  <rect x="30" y="120" width="140" height="6" fill="#D88A0F"/>
+  <circle cx="60" cy="155" r="16" fill="#2A2A2A"/>
+  <circle cx="140" cy="155" r="16" fill="#2A2A2A"/>
+  <circle cx="60" cy="155" r="6" fill="#9BB8DD"/>
+  <circle cx="140" cy="155" r="6" fill="#9BB8DD"/>
+</svg>`,
+
+  bush: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bush">
+  <rect width="200" height="200" fill="#E6F7D9"/>
+  <ellipse cx="100" cy="170" rx="80" ry="10" fill="#7A4A21" opacity="0.4"/>
+  <circle cx="60" cy="130" r="36" fill="#4CAF50"/>
+  <circle cx="100" cy="110" r="44" fill="#5BBF60"/>
+  <circle cx="140" cy="130" r="36" fill="#4CAF50"/>
+  <circle cx="80" cy="150" r="28" fill="#6FCF70"/>
+  <circle cx="120" cy="150" r="28" fill="#6FCF70"/>
+  <circle cx="78" cy="100" r="4" fill="#E63946"/>
+  <circle cx="120" cy="120" r="4" fill="#E63946"/>
+  <circle cx="100" cy="140" r="4" fill="#FFD93D"/>
+</svg>`,
+
+  cake: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cake">
+  <rect width="200" height="200" fill="#FFE8F1"/>
+  <rect x="40" y="120" width="120" height="50" rx="6" fill="#FFB1B1"/>
+  <rect x="60" y="80" width="80" height="40" rx="6" fill="#FFD0E0"/>
+  <path d="M40 130 Q60 120 80 130 T120 130 T160 130" stroke="#FFFFFF" stroke-width="6" fill="none"/>
+  <path d="M60 90 Q80 80 100 90 T140 90" stroke="#FFFFFF" stroke-width="6" fill="none"/>
+  <rect x="96" y="50" width="8" height="30" fill="#FFD93D"/>
+  <path d="M100 40 Q92 50 100 56 Q108 50 100 40 Z" fill="#FFB52E"/>
+  <circle cx="60" cy="110" r="4" fill="#E63946"/>
+  <circle cx="100" cy="150" r="4" fill="#E63946"/>
+  <circle cx="140" cy="110" r="4" fill="#E63946"/>
+</svg>`,
+
+  chair: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Chair">
+  <rect width="200" height="200" fill="#FFF3D6"/>
+  <rect x="60" y="30" width="80" height="80" rx="6" fill="#A0703D"/>
+  <rect x="50" y="100" width="100" height="20" fill="#8B5A2B"/>
+  <rect x="56" y="120" width="10" height="60" fill="#7A4A21"/>
+  <rect x="134" y="120" width="10" height="60" fill="#7A4A21"/>
+  <rect x="68" y="40" width="64" height="6" fill="#7A4A21"/>
+  <rect x="68" y="56" width="64" height="6" fill="#7A4A21"/>
+  <rect x="68" y="72" width="64" height="6" fill="#7A4A21"/>
+</svg>`,
+
+  cheek: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cheek">
+  <rect width="200" height="200" fill="#FFF1F6"/>
+  <circle cx="100" cy="100" r="68" fill="#F8D2B5"/>
+  <circle cx="82" cy="90" r="6" fill="#2A1B0F"/>
+  <circle cx="118" cy="90" r="6" fill="#2A1B0F"/>
+  <ellipse cx="70" cy="118" rx="14" ry="10" fill="#FF8AA0" opacity="0.85"/>
+  <ellipse cx="130" cy="118" rx="14" ry="10" fill="#FF8AA0" opacity="0.85"/>
+  <path d="M86 132 Q100 142 114 132" stroke="#C04060" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="100" cy="110" r="6" fill="#F2C79A"/>
+</svg>`,
+
+  cheese: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cheese">
+  <rect width="200" height="200" fill="#FFF8C6"/>
+  <polygon points="30,150 170,150 170,90 30,150" fill="#FFD93D" stroke="#C9A227" stroke-width="3"/>
+  <polygon points="30,150 170,90 30,90" fill="#FFE680" stroke="#C9A227" stroke-width="3"/>
+  <circle cx="80" cy="130" r="8" fill="#FFF8C6"/>
+  <circle cx="120" cy="120" r="6" fill="#FFF8C6"/>
+  <circle cx="100" cy="142" r="5" fill="#FFF8C6"/>
+  <circle cx="140" cy="135" r="6" fill="#FFF8C6"/>
+  <circle cx="70" cy="110" r="5" fill="#FFE680"/>
+</svg>`,
+
+  cherry: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cherry">
+  <rect width="200" height="200" fill="#FFE8F1"/>
+  <path d="M80 40 Q90 80 70 120" stroke="#5A8B3F" stroke-width="4" fill="none"/>
+  <path d="M120 40 Q110 80 130 120" stroke="#5A8B3F" stroke-width="4" fill="none"/>
+  <path d="M80 40 Q100 30 120 40 Q124 50 110 56 Q100 50 80 40 Z" fill="#5A8B3F"/>
+  <ellipse cx="60" cy="138" rx="32" ry="34" fill="#E63946"/>
+  <ellipse cx="140" cy="138" rx="32" ry="34" fill="#E63946"/>
+  <ellipse cx="52" cy="124" rx="8" ry="6" fill="#FFB1B1" opacity="0.7"/>
+  <ellipse cx="132" cy="124" rx="8" ry="6" fill="#FFB1B1" opacity="0.7"/>
+</svg>`,
+
+  chick: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Chick">
+  <rect width="200" height="200" fill="#FFF8C6"/>
+  <ellipse cx="100" cy="130" rx="54" ry="44" fill="#FFD93D"/>
+  <circle cx="100" cy="80" r="38" fill="#FFE680"/>
+  <circle cx="88" cy="74" r="5" fill="#1A1A1A"/>
+  <circle cx="112" cy="74" r="5" fill="#1A1A1A"/>
+  <circle cx="86" cy="72" r="2" fill="#FFFFFF"/>
+  <circle cx="110" cy="72" r="2" fill="#FFFFFF"/>
+  <polygon points="92,88 108,88 100,98" fill="#FF8A2B"/>
+  <path d="M92 56 L100 40 L108 56 Z" fill="#FFB52E"/>
+  <line x1="86" y1="170" x2="84" y2="186" stroke="#FF8A2B" stroke-width="4" stroke-linecap="round"/>
+  <line x1="114" y1="170" x2="116" y2="186" stroke="#FF8A2B" stroke-width="4" stroke-linecap="round"/>
+</svg>`,
+
+  chicken: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Chicken">
+  <rect width="200" height="200" fill="#FFF3D6"/>
+  <ellipse cx="110" cy="120" rx="58" ry="46" fill="#FFFFFF" stroke="#C9A227" stroke-width="3"/>
+  <circle cx="60" cy="80" r="28" fill="#FFFFFF" stroke="#C9A227" stroke-width="3"/>
+  <path d="M42 60 Q44 46 56 50 Q58 40 70 48 Q74 42 80 54" fill="#E63946"/>
+  <polygon points="36,80 22,86 36,90" fill="#FFB52E"/>
+  <circle cx="52" cy="78" r="3" fill="#1A1A1A"/>
+  <path d="M64 96 Q70 110 60 110" fill="#E63946"/>
+  <path d="M150 120 Q170 100 168 90 Q156 100 150 100" fill="#FFE680"/>
+  <line x1="90" y1="170" x2="88" y2="186" stroke="#FFB52E" stroke-width="4" stroke-linecap="round"/>
+  <line x1="120" y1="170" x2="122" y2="186" stroke="#FFB52E" stroke-width="4" stroke-linecap="round"/>
+</svg>`,
+
+  chin: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Chin">
+  <rect width="200" height="200" fill="#FFF1E0"/>
+  <ellipse cx="100" cy="100" rx="64" ry="76" fill="#F8D2B5"/>
+  <circle cx="82" cy="84" r="5" fill="#2A1B0F"/>
+  <circle cx="118" cy="84" r="5" fill="#2A1B0F"/>
+  <path d="M86 110 Q100 116 114 110" stroke="#C04060" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M70 150 Q100 180 130 150" stroke="#E63946" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="100" cy="158" rx="20" ry="6" fill="#FF8AA0" opacity="0.5"/>
+</svg>`,
+
+  chip: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Chip">
+  <rect width="200" height="200" fill="#FFF8C6"/>
+  <path d="M60 60 Q40 80 50 110 Q40 140 70 160 Q100 170 130 160 Q160 150 160 120 Q170 90 150 70 Q120 50 90 56 Z" fill="#FFD79B" stroke="#A0703D" stroke-width="3"/>
+  <ellipse cx="80" cy="90" rx="6" ry="4" fill="#A0703D" opacity="0.5"/>
+  <ellipse cx="120" cy="100" rx="6" ry="4" fill="#A0703D" opacity="0.5"/>
+  <ellipse cx="100" cy="130" rx="5" ry="3" fill="#A0703D" opacity="0.5"/>
+  <ellipse cx="140" cy="130" rx="5" ry="3" fill="#A0703D" opacity="0.5"/>
+</svg>`,
+
+  chocolate: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Chocolate">
+  <rect width="200" height="200" fill="#FFF1D6"/>
+  <rect x="40" y="50" width="120" height="100" rx="6" fill="#6F3A1A"/>
+  <g fill="#8B4A22">
+    <rect x="50" y="60" width="30" height="22"/>
+    <rect x="86" y="60" width="30" height="22"/>
+    <rect x="122" y="60" width="30" height="22"/>
+    <rect x="50" y="88" width="30" height="22"/>
+    <rect x="86" y="88" width="30" height="22"/>
+    <rect x="122" y="88" width="30" height="22"/>
+    <rect x="50" y="116" width="30" height="22"/>
+    <rect x="86" y="116" width="30" height="22"/>
+    <rect x="122" y="116" width="30" height="22"/>
+  </g>
+  <path d="M40 50 L160 50 L150 60 L50 60 Z" fill="#A0653A"/>
+</svg>`,
+
+  circle: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Circle">
+  <rect width="200" height="200" fill="#D9F0FF"/>
+  <circle cx="100" cy="100" r="70" fill="#3D8BFD" stroke="#1E5FBD" stroke-width="5"/>
+  <circle cx="80" cy="80" r="14" fill="#FFFFFF" opacity="0.45"/>
+</svg>`,
+
+  clock: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Clock">
+  <rect width="200" height="200" fill="#FFF3D6"/>
+  <circle cx="100" cy="105" r="74" fill="#FFFFFF" stroke="#2A2A2A" stroke-width="5"/>
+  <g fill="#2A2A2A" font-family="Comic Sans MS, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    <text x="100" y="48">12</text>
+    <text x="166" y="112">3</text>
+    <text x="100" y="178">6</text>
+    <text x="34" y="112">9</text>
+  </g>
+  <line x1="100" y1="105" x2="100" y2="64" stroke="#2A2A2A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="100" y1="105" x2="140" y2="120" stroke="#E63946" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="100" cy="105" r="6" fill="#E63946"/>
+  <rect x="86" y="20" width="10" height="14" rx="2" fill="#2A2A2A"/>
+  <rect x="104" y="20" width="10" height="14" rx="2" fill="#2A2A2A"/>
+</svg>`,
+
+  cloud: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cloud">
+  <rect width="200" height="200" fill="#9BD3FF"/>
+  <circle cx="60" cy="110" r="34" fill="#FFFFFF"/>
+  <circle cx="90" cy="86" r="36" fill="#FFFFFF"/>
+  <circle cx="130" cy="86" r="32" fill="#FFFFFF"/>
+  <circle cx="150" cy="116" r="28" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="124" rx="60" ry="20" fill="#FFFFFF"/>
+</svg>`,
+
+  coat: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Coat">
+  <rect width="200" height="200" fill="#E8F4FF"/>
+  <path d="M70 40 L100 60 L130 40 L170 80 L150 110 L150 180 L50 180 L50 110 L30 80 Z" fill="#7B3FA0" stroke="#4A2370" stroke-width="3"/>
+  <path d="M100 60 L100 180" stroke="#4A2370" stroke-width="2"/>
+  <circle cx="110" cy="90" r="4" fill="#FFD93D"/>
+  <circle cx="110" cy="120" r="4" fill="#FFD93D"/>
+  <circle cx="110" cy="150" r="4" fill="#FFD93D"/>
+  <path d="M70 40 L100 60 L80 80 Z" fill="#9B5FC0"/>
+  <path d="M130 40 L100 60 L120 80 Z" fill="#9B5FC0"/>
+</svg>`,
+
+  comet: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Comet">
+  <rect width="200" height="200" fill="#0E1A40"/>
+  <circle cx="40" cy="40" r="2" fill="#FFF"/>
+  <circle cx="170" cy="160" r="2" fill="#FFF"/>
+  <circle cx="160" cy="40" r="2" fill="#FFF"/>
+  <path d="M150 60 Q90 90 30 170" stroke="#FFE680" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <path d="M150 60 Q100 90 50 150" stroke="#FFB52E" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="150" cy="60" r="22" fill="#FFE680"/>
+  <circle cx="150" cy="60" r="14" fill="#FFB52E"/>
+  <circle cx="148" cy="58" r="6" fill="#FFFFFF"/>
+</svg>`,
+
+  cookie: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cookie">
+  <rect width="200" height="200" fill="#FFF1D6"/>
+  <circle cx="100" cy="100" r="70" fill="#D4A574" stroke="#7A4A21" stroke-width="3"/>
+  <circle cx="74" cy="80" r="9" fill="#3A2A1F"/>
+  <circle cx="120" cy="74" r="8" fill="#3A2A1F"/>
+  <circle cx="130" cy="120" r="9" fill="#3A2A1F"/>
+  <circle cx="80" cy="130" r="8" fill="#3A2A1F"/>
+  <circle cx="100" cy="100" r="6" fill="#3A2A1F"/>
+  <circle cx="60" cy="110" r="6" fill="#3A2A1F"/>
+  <circle cx="146" cy="96" r="6" fill="#3A2A1F"/>
+</svg>`,
+
+  cousin: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cousin">
+  <rect width="200" height="200" fill="#FFE8F1"/>
+  <circle cx="70" cy="80" r="28" fill="#F2C79A"/>
+  <path d="M46 76 Q46 52 70 52 Q94 52 94 76 L94 82 L46 82 Z" fill="#7A4A21"/>
+  <circle cx="62" cy="82" r="3" fill="#2A1B0F"/>
+  <circle cx="78" cy="82" r="3" fill="#2A1B0F"/>
+  <path d="M62 92 Q70 98 78 92" stroke="#C04060" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M40 180 Q40 120 70 120 Q100 120 100 180 Z" fill="#3D8BFD"/>
+  <circle cx="140" cy="80" r="28" fill="#F2C79A"/>
+  <path d="M114 76 Q120 50 140 50 Q160 50 166 76 Q170 90 158 88 Q146 80 132 88 Q120 90 114 76 Z" fill="#E07A8B"/>
+  <circle cx="132" cy="82" r="3" fill="#2A1B0F"/>
+  <circle cx="148" cy="82" r="3" fill="#2A1B0F"/>
+  <path d="M132 92 Q140 98 148 92" stroke="#C04060" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M110 180 Q110 120 140 120 Q170 120 170 180 Z" fill="#E63946"/>
+</svg>`,
+
+  crab: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Crab">
+  <rect width="200" height="200" fill="#FFE7B3"/>
+  <ellipse cx="100" cy="110" rx="60" ry="40" fill="#E63946"/>
+  <circle cx="80" cy="90" r="8" fill="#FFFFFF"/>
+  <circle cx="120" cy="90" r="8" fill="#FFFFFF"/>
+  <circle cx="80" cy="90" r="4" fill="#1A1A1A"/>
+  <circle cx="120" cy="90" r="4" fill="#1A1A1A"/>
+  <line x1="80" y1="82" x2="78" y2="68" stroke="#9B2030" stroke-width="3"/>
+  <line x1="120" y1="82" x2="122" y2="68" stroke="#9B2030" stroke-width="3"/>
+  <path d="M88 124 Q100 132 112 124" stroke="#9B2030" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M40 110 Q24 100 18 80 Q12 96 24 110 Q14 116 24 124 Q34 122 44 116 Z" fill="#E63946"/>
+  <path d="M160 110 Q176 100 182 80 Q188 96 176 110 Q186 116 176 124 Q166 122 156 116 Z" fill="#E63946"/>
+  <g stroke="#9B2030" stroke-width="4" stroke-linecap="round">
+    <line x1="60" y1="140" x2="50" y2="160"/>
+    <line x1="80" y1="148" x2="72" y2="170"/>
+    <line x1="120" y1="148" x2="128" y2="170"/>
+    <line x1="140" y1="140" x2="150" y2="160"/>
+  </g>
+</svg>`,
+
+  crayon: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Crayon">
+  <rect width="200" height="200" fill="#FFF8C6"/>
+  <g transform="rotate(-25 100 100)">
+    <rect x="40" y="80" width="100" height="40" fill="#E63946"/>
+    <rect x="40" y="80" width="100" height="8" fill="#FFFFFF" opacity="0.4"/>
+    <rect x="40" y="80" width="14" height="40" fill="#FFFFFF"/>
+    <rect x="124" y="80" width="14" height="40" fill="#FFFFFF"/>
+    <polygon points="140,80 170,100 140,120" fill="#FFE0E0"/>
+    <polygon points="160,90 170,100 160,110" fill="#9B2030"/>
+  </g>
+</svg>`,
+
+  crescent: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Crescent">
+  <rect width="200" height="200" fill="#0E1A40"/>
+  <circle cx="50" cy="40" r="2" fill="#FFF"/>
+  <circle cx="170" cy="60" r="2" fill="#FFF"/>
+  <circle cx="160" cy="160" r="2" fill="#FFF"/>
+  <path d="M100 30 A70 70 0 1 0 100 170 A50 70 0 1 1 100 30 Z" fill="#FFE680"/>
+  <circle cx="76" cy="80" r="6" fill="#FFC59B" opacity="0.6"/>
+  <circle cx="86" cy="120" r="5" fill="#FFC59B" opacity="0.6"/>
+</svg>`,
+
+  cup: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Cup">
+  <rect width="200" height="200" fill="#E8F4FF"/>
+  <path d="M50 60 L150 60 L142 170 Q140 180 130 180 L70 180 Q60 180 58 170 Z" fill="#FFFFFF" stroke="#3D8BFD" stroke-width="4"/>
+  <ellipse cx="100" cy="60" rx="50" ry="10" fill="#9BD3FF"/>
+  <path d="M150 90 Q180 90 180 120 Q180 150 150 150" stroke="#3D8BFD" stroke-width="6" fill="none"/>
+  <ellipse cx="100" cy="74" rx="40" ry="6" fill="#FFFFFF" opacity="0.6"/>
+</svg>`,
 
 /** Color palette used for the generic fallback card. */
 const FALLBACK_PALETTE: Array<{ bg: string; fg: string; accent: string }> = [
@@ -1295,18 +1895,26 @@ function normalize(word: string): string {
   return w;
 }
 
+/** Returns the exact-lowercase form, plus the de-pluralized form, in priority order. */
+function lookupKeys(word: string): string[] {
+  const lower = (word || '').trim().toLowerCase();
+  const stripped = normalize(word);
+  return lower === stripped ? [lower] : [lower, stripped];
+}
+
 /**
  * Returns a high-quality SVG data URL for the given word. Always returns a
  * usable, child-friendly illustration: a hand-crafted SVG for known words, or
  * a colored generic card displaying the word's initial otherwise.
  */
 export function getWordImage(word: string): string {
-  const key = normalize(word);
-  const svg = SVGS[key] ?? buildGenericSvg(word);
-  return toDataUrl(svg);
+  for (const key of lookupKeys(word)) {
+    if (SVGS[key]) return toDataUrl(SVGS[key]);
+  }
+  return toDataUrl(buildGenericSvg(word));
 }
 
 /** Exposed for tests / debugging. */
 export function hasCuratedImage(word: string): boolean {
-  return Object.prototype.hasOwnProperty.call(SVGS, normalize(word));
+  return lookupKeys(word).some((k) => Object.prototype.hasOwnProperty.call(SVGS, k));
 }
