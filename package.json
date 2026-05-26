@@ -8,8 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "build:desktop": "vite build --base=./",
-    "dist:win": "npm run build:desktop && electron-builder --win --x64",
-    "dist:mac": "npm run build:desktop && electron-builder --mac --x64 --arm64",
+    "dist:win": "npm run build:desktop && electron-builder --win --x64 --publish=never",
+    "dist:mac": "npm run build:desktop && electron-builder --mac --x64 --arm64 --publish=never",
     "preview": "vite preview",
     "test": "node --test tests/*.test.mjs"
   },
