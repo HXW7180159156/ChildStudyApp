@@ -4,15 +4,14 @@ import { speakWord } from '../services/speech';
 
 interface FlashCardProps {
   item: WordItem;
-  audioContext: AudioContext | null;
   onNext: () => void;
   isLast: boolean;
 }
 
-export const FlashCard: React.FC<FlashCardProps> = ({ item, audioContext, onNext, isLast }) => {
+export const FlashCard: React.FC<FlashCardProps> = ({ item, onNext, isLast }) => {
   
   const playSound = () => {
-    speakWord(item, audioContext);
+    speakWord(item);
   };
 
   // Play sound on mount once

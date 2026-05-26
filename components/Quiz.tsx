@@ -4,7 +4,6 @@ import { speakWord } from '../services/speech';
 
 interface QuizProps {
   words: WordItem[];
-  audioContext: AudioContext | null;
   onComplete: (result: QuizResult) => void;
   /** When true the heading reads "Review" instead of "Quiz". */
   reviewMode?: boolean;
@@ -40,7 +39,7 @@ function computeStars(correct: number, total: number): number {
   return 0;
 }
 
-export const Quiz: React.FC<QuizProps> = ({ words, audioContext, onComplete, reviewMode = false }) => {
+export const Quiz: React.FC<QuizProps> = ({ words, onComplete, reviewMode = false }) => {
   const rounds = useMemo(() => buildRounds(words), [words]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showFeedback, setShowFeedback] = useState<'correct' | 'wrong' | null>(null);
@@ -73,7 +72,7 @@ export const Quiz: React.FC<QuizProps> = ({ words, audioContext, onComplete, rev
         correctFirstTryRef.current += 1;
       }
       setShowFeedback('correct');
-      speakWord(currentWord, audioContext);
+      speakWord(currentWord);
       setTimeout(() => {
         if (currentIndex < rounds.length - 1) {
           currentMissedRef.current = false;

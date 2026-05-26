@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { ScreenState, LessonConfig, WordItem, LessonCategory, ProgressMap, QuizResult, CachedWord } from './types';
-import { generateVocabulary, generateImage, generateSpeechBase64, hasApiKey } from './services/geminiService';
-import { audioBufferFromBase64 } from './services/audioUtils';
+import { getFallbackVocabulary } from './services/fallbackData';
+import { getWordImage } from './services/wordImages';
 import { loadProgress, recordLessonResult, loadCachedLesson, saveCachedLesson } from './services/storage';
 import { LoadingScreen } from './components/LoadingScreen';
 import { FlashCard } from './components/FlashCard';
@@ -9,7 +9,7 @@ import { Quiz } from './components/Quiz';
 import { ErrorScreen } from './components/ErrorScreen';
 import { ReportScreen } from './components/ReportScreen';
 
-// --- DATA GENERATION HELPERS ---
+// --- LESSON DATA HELPERS ---
 
 const BG_COLORS = [
   'bg-red-100', 'bg-orange-100', 'bg-amber-100', 'bg-yellow-100', 'bg-lime-100',
@@ -85,8 +85,6 @@ function App() {
   const [reviewWords, setReviewWords] = useState<WordItem[] | null>(null);
   const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const audioContextRef = useRef<AudioContext | null>(null);
-
   const mostRecentLessonId = useMemo(() => {
     let bestId: string | null = null;
     let bestTs = 0;
@@ -100,41 +98,7 @@ function App() {
   }, [progress]);
 
   useEffect(() => {
-    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-    audioContextRef.current = new AudioContextClass({ sampleRate: 24000 });
-
-    const unlockAudio = () => {
-      if (audioContextRef.current?.state === 'suspended') {
-        audioContextRef.current.resume();
-      }
-      document.removeEventListener('click', unlockAudio);
-    };
-    document.addEventListener('click', unlockAudio);
-
     setProgress(loadProgress());
-
-    return () => {
-      audioContextRef.current?.close();
-    };
-  }, []);
-
-  /**
-   * Hydrates cached words by decoding base64 audio into runtime AudioBuffers.
-   */
-  const hydrateCached = useCallback(async (cached: CachedWord[]): Promise<WordItem[]> => {
-    return Promise.all(
-      cached.map(async (w) => {
-        let audioBuffer: AudioBuffer | undefined;
-        if (w.audioBase64 && audioContextRef.current) {
-          try {
-            audioBuffer = await audioBufferFromBase64(w.audioBase64, audioContextRef.current);
-          } catch (e) {
-            console.warn('Failed to decode cached audio', e);
-          }
-        }
-        return { ...w, audioBuffer };
-      }),
-    );
   }, []);
 
   const loadLessonContent = useCallback(
@@ -142,41 +106,28 @@ function App() {
       // 1. Try local cache first.
       const cached = loadCachedLesson(lesson.id);
       if (cached && cached.words.length > 0) {
-        return hydrateCached(cached.words);
+        return cached.words;
       }
 
-      // 2. Generate vocabulary + media.
-      const vocabList = await generateVocabulary(lesson.topic, lesson.category);
+      // 2. Load built-in vocabulary + illustrations.
+      const vocabList = getFallbackVocabulary(lesson.topic, lesson.category);
       if (!vocabList || vocabList.length === 0) {
         throw new Error('Empty vocabulary');
       }
 
-      const enriched: WordItem[] = await Promise.all(
-        vocabList.map(async (item) => {
-          const [imageUrl, audioBase64] = await Promise.all([
-            generateImage(item.word),
-            generateSpeechBase64(item.word),
-          ]);
-          let audioBuffer: AudioBuffer | undefined;
-          if (audioBase64 && audioContextRef.current) {
-            try {
-              audioBuffer = await audioBufferFromBase64(audioBase64, audioContextRef.current);
-            } catch (e) {
-              console.warn('Failed to decode generated audio', e);
-            }
-          }
-          return { ...item, imageUrl, audioBase64, audioBuffer };
-        }),
-      );
+      const enriched: WordItem[] = vocabList.map((item) => (
+        { ...item, imageUrl: getWordImage(item.word) }
+      ));
 
-      // 3. Persist to cache (without runtime AudioBuffer).
-      const toCache: CachedWord[] = enriched.map(({ audioBuffer: _ab, ...rest }) => rest);
+      // 3. Persist to cache.
+      const toCache: CachedWord[] = enriched.map(({ ...rest }) => rest);
       saveCachedLesson(lesson.id, toCache);
 
       return enriched;
     },
-    [hydrateCached],
+    [],
   );
+
 
   const startLesson = useCallback(
     async (lesson: LessonConfig) => {
@@ -282,7 +233,6 @@ function App() {
         </div>
         <FlashCard
           item={lessonData[currentWordIndex]}
-          audioContext={audioContextRef.current}
           onNext={handleNextWord}
           isLast={currentWordIndex === lessonData.length - 1}
         />
@@ -301,7 +251,6 @@ function App() {
         <Quiz
           key={isReview ? 'review' : 'quiz'}
           words={quizWords}
-          audioContext={audioContextRef.current}
           onComplete={isReview ? handleReviewComplete : handleQuizComplete}
           reviewMode={isReview}
         />
@@ -390,12 +339,6 @@ function App() {
             <div className="bg-white p-2 rounded-full shadow-sm text-2xl">🧑‍🚀</div>
           </div>
         </div>
-
-        {!hasApiKey && (
-          <div className="bg-yellow-100 text-yellow-900 text-xs font-bold px-3 py-2 rounded-xl mb-3 text-center">
-            ⚠️ 未检测到 GEMINI_API_KEY，使用示例数据预览模式
-          </div>
-        )}
 
         <div className="flex space-x-2 px-2">
           {renderTabButton('alphabet', 'Letters', '🔤')}
