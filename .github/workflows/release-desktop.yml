@@ -1,0 +1,91 @@
+name: Build desktop release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag
+        required: true
+        default: v1.0.0
+      release_name:
+        description: Release name
+        required: true
+        default: V1.0
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build ${{ matrix.platform.name }}
+    runs-on: ${{ matrix.platform.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Win11
+            runner: windows-latest
+            script: dist:win
+            artifact: win11
+            files: release/*.exe
+          - name: macOS
+            runner: macos-latest
+            script: dist:mac
+            artifact: macos
+            files: release/*.dmg
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Build desktop installer
+        run: npm run ${{ matrix.platform.script }}
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lingoquest-kids-${{ matrix.platform.artifact }}
+          path: ${{ matrix.platform.files }}
+          if-no-files-found: error
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: ${{ github.event.inputs.tag || github.ref_name }}
+      RELEASE_NAME: ${{ github.event.inputs.release_name || github.ref_name }}
+
+    steps:
+      - name: Download installer artifacts
+        uses: actions/download-artifact@v4.1.3
+        with:
+          path: release-assets
+          pattern: lingoquest-kids-*
+          merge-multiple: true
+
+      - name: Create or update release
+        run: |
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --title "$RELEASE_NAME" --notes "LingoQuest Kids V1.0 desktop release for Win11 and macOS."
+          fi
+          gh release upload "$RELEASE_TAG" release-assets/* --clobber

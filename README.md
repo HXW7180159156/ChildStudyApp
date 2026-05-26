@@ -45,6 +45,17 @@ npm run build      # 输出到 dist/
 npm run preview    # 本地预览构建产物
 ```
 
+## 🖥️ 桌面发行版
+
+当前工程可通过 Electron Builder 打包为桌面安装包：
+
+```bash
+npm run dist:win   # 生成 Win11 x64 安装包到 release/
+npm run dist:mac   # 生成 macOS x64/arm64 DMG 到 release/
+```
+
+也可以在 GitHub Actions 手动触发 **Build desktop release** 工作流，默认会构建并发布 `v1.0.0` / `V1.0` 的 GitHub Release。
+
 ## ☁️ 云端部署（GitHub Pages）
 
 本仓库已添加 GitHub Pages 自动部署工作流。
