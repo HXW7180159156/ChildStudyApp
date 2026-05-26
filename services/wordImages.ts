@@ -1830,6 +1830,150 @@ const SVGS: Record<string, string> = {
 </svg>`,
 };
 
+
+/** Dedicated emoji illustrations for built-in vocabulary that does not yet have
+ * a fully hand-drawn SVG. These keep Letters, Sounds, and Themes from falling
+ * back to the generic initial-card image. */
+const WORD_EMOJIS: Record<string, string> = {
+  dad: '👨',
+  desk: '🧑‍💻',
+  diamond: '💎',
+  dish: '🍽️',
+  doll: '🪆',
+  dolphin: '🐬',
+  donkey: '🐴',
+  dress: '👗',
+  earth: '🌍',
+  eight: '8️⃣',
+  eraser: '🧽',
+  eye: '👁️',
+  family: '👨‍👩‍👧',
+  fan: '🪭',
+  five: '5️⃣',
+  fog: '🌫️',
+  foot: '🦶',
+  forest: '🌲',
+  four: '4️⃣',
+  galaxy: '🌌',
+  gloves: '🧤',
+  goose: '🪿',
+  grandma: '👵',
+  grandpa: '👴',
+  grass: '🌱',
+  gray: '⬜',
+  hair: '💇',
+  hand: '✋',
+  head: '🙂',
+  heart: '❤️',
+  helicopter: '🚁',
+  hen: '🐔',
+  hexagon: '⬡',
+  hill: '⛰️',
+  hot: '🔥',
+  hug: '🤗',
+  jellyfish: '🪼',
+  jump: '🤸',
+  lake: '🏞️',
+  leg: '🦵',
+  lightning: '⚡',
+  lip: '👄',
+  lunch: '🍱',
+  map: '🗺️',
+  math: '➕',
+  mom: '👩',
+  mop: '🧹',
+  mountain: '🏔️',
+  mouth: '👄',
+  mug: '☕',
+  nine: '9️⃣',
+  noodles: '🍜',
+  nut: '🥜',
+  one: '1️⃣',
+  oval: '🥚',
+  pan: '🍳',
+  pants: '👖',
+  path: '🛤️',
+  peach: '🍑',
+  pen: '🖊️',
+  pencil: '✏️',
+  pentagon: '⬟',
+  pin: '📌',
+  pineapple: '🍍',
+  pink: '🌸',
+  plane: '✈️',
+  planet: '🪐',
+  pot: '🍲',
+  purple: '🟣',
+  puzzle: '🧩',
+  question: '❓',
+  rain: '🌧️',
+  rectangle: '▭',
+  rice: '🍚',
+  river: '🏞️',
+  rock: '🪨',
+  rocket: '🚀',
+  ruler: '📏',
+  run: '🏃',
+  sand: '🏖️',
+  sandwich: '🥪',
+  satellite: '🛰️',
+  scarf: '🧣',
+  scissors: '✂️',
+  scooter: '🛴',
+  seahorse: '🪸',
+  seal: '🦭',
+  seed: '🌰',
+  seven: '7️⃣',
+  shark: '🦈',
+  shell: '🐚',
+  ship: '🚢',
+  shirt: '👕',
+  shoe: '👟',
+  shop: '🏪',
+  shower: '🚿',
+  sing: '🎤',
+  sister: '👧',
+  six: '6️⃣',
+  skirt: '🩳',
+  smile: '😊',
+  snow: '❄️',
+  soap: '🧼',
+  sock: '🧦',
+  soup: '🍲',
+  square: '◼️',
+  starfish: '⭐',
+  storm: '⛈️',
+  strawberry: '🍓',
+  taxi: '🚕',
+  teacher: '🧑‍🏫',
+  teddy: '🧸',
+  ten: '🔟',
+  tent: '⛺',
+  thick: '📚',
+  thin: '📏',
+  thorn: '🌹',
+  three: '3️⃣',
+  throne: '🪑',
+  thumb: '👍',
+  thunder: '🌩️',
+  tooth: '🦷',
+  top: '🌀',
+  triangle: '🔺',
+  truck: '🚚',
+  turkey: '🦃',
+  turtle: '🐢',
+  two: '2️⃣',
+  uncle: '👨',
+  up: '⬆️',
+  wash: '🧼',
+  web: '🕸️',
+  white: '⚪',
+  wind: '🌬️',
+  'yo-yo': '🪀',
+  zero: '0️⃣',
+  zoo: '🦁',
+};
+
 /** Color palette used for the generic fallback card. */
 const FALLBACK_PALETTE: Array<{ bg: string; fg: string; accent: string }> = [
   { bg: '#FFE3E3', fg: '#E63946', accent: '#FF8A93' },
@@ -1857,6 +2001,24 @@ function hashCode(s: string): number {
     h = (h * 31 + s.charCodeAt(i)) | 0;
   }
   return Math.abs(h);
+}
+
+
+/** Word-specific emoji card for built-in vocabulary awaiting a hand-drawn SVG. */
+function buildEmojiSvg(word: string, emoji: string): string {
+  const trimmed = (word || '').trim();
+  const palette = FALLBACK_PALETTE[hashCode(trimmed.toLowerCase()) % FALLBACK_PALETTE.length];
+  const label = escapeXml(trimmed.slice(0, 12));
+  return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="${label}">
+  <rect width="200" height="200" fill="${palette.bg}"/>
+  <circle cx="48" cy="48" r="22" fill="${palette.accent}" opacity="0.55"/>
+  <circle cx="158" cy="58" r="16" fill="${palette.accent}" opacity="0.45"/>
+  <circle cx="44" cy="158" r="18" fill="${palette.accent}" opacity="0.45"/>
+  <circle cx="100" cy="98" r="62" fill="#FFFFFF" opacity="0.82"/>
+  <text x="100" y="122" text-anchor="middle" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" font-size="82">${escapeXml(emoji)}</text>
+  <text x="100" y="184" text-anchor="middle" font-family="Comic Sans MS, 'Comic Sans', cursive, sans-serif" font-size="20" font-weight="bold" fill="${palette.fg}">${label}</text>
+</svg>`;
 }
 
 /** Generic, pretty card for any word that isn't in the curated SVG library. */
@@ -1911,11 +2073,14 @@ function lookupKeys(word: string): string[] {
 export function getWordImage(word: string): string {
   for (const key of lookupKeys(word)) {
     if (SVGS[key]) return toDataUrl(SVGS[key]);
+    if (WORD_EMOJIS[key]) return toDataUrl(buildEmojiSvg(word, WORD_EMOJIS[key]));
   }
   return toDataUrl(buildGenericSvg(word));
 }
 
 /** Exposed for tests / debugging. */
 export function hasCuratedImage(word: string): boolean {
-  return lookupKeys(word).some((k) => Object.prototype.hasOwnProperty.call(SVGS, k));
+  return lookupKeys(word).some(
+    (k) => Object.prototype.hasOwnProperty.call(SVGS, k) || Object.prototype.hasOwnProperty.call(WORD_EMOJIS, k),
+  );
 }
